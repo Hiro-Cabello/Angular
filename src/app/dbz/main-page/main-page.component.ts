@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interfaces';
+import { DbzService } from '../services/dbz.service';
 
 /*
 interface Personaje{
@@ -18,30 +19,29 @@ interface Personaje{
 
 export class MainPageComponent  { 
 
-  personajes:Personaje[]=[
-    {
-      nombre:'Goku',
-      poder:15000
-    },
-    {
-      nombre:'Vegeta',
-      poder:7500
-    },
-    {
-      nombre:'Gohan',
-      poder:1000
-    }
-  ];
+//personajes:Personaje[]=[];
  
  nuevo:Personaje={
   nombre:'Trunsk',
   poder:1700
  }
-
+/*
+ get personajes():Personaje[]{
+   return this.dbzService.personajes;
+ }
+*/
+/*
  agregarNuevoPersonaje(argumento:Personaje){
-   console.log("Entro en la funcion")
-   console.log(argumento)
+ 
    this.personajes.push(argumento)
+ }
+ */
+/*Constructor de servicios */
+
+/*Si ya hay un servicio inicializado por ende si lo creo que otro lado
+no se duplicara el servicio asi que solo sera uno*/
+ constructor(){
+   //this.personajes = this.dbzService.personajes;
  }
 
 }
