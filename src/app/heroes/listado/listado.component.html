@@ -1,0 +1,32 @@
+<p>Listado de Heroes</p>
+
+<!-- Solo ese ngIf va aparecer si es true de lo 
+contrario no se mostrara-->
+<!--*ngIf="heroeBorrado !='' "  .. *ngIf es 
+    lo suficiente mente inteligente para que 
+    pueda diferenciar entre ' ' , false o undefined " -->
+<div *ngIf="heroeBorrado; else noBorrado">
+    <h3> Heroe borrado :  <small>{{heroeBorrado}}</small></h3>
+   
+</div>
+
+
+<!-- Las referencias locales son siempre del lado del template-->
+<ng-template #noBorrado>
+    <h3>No se ha borrado nada</h3>
+</ng-template>
+
+
+
+
+<button (click)="borrarHeroe()">
+    Borrar
+</button>
+
+
+<ul>
+    <!-- Recordar que luego del *ngFor tienes que psarle valores que iteren-->
+    <li *ngFor="let heroe of heroes; let i = index">
+        {{i+1}} - {{heroe}}
+    </li>
+</ul>
